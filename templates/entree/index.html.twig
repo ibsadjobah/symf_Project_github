@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion-entree{% endblock %}
+
+{% block body %}
+<div class="row">
+    <section class="col-md-3 offset-3">
+
+                <div class="card">
+        
+                        <div class="card-header bg-info">
+                                <h2> Liste des Achats 
+                        </div>
+                            <div class="card-body">
+                               <table class="table table-boredered">
+                            
+                                <tr class="bg-secondary">
+                                    <th>Identifiant</th>
+                                    <th>Date</th>
+                                    <th>QteAcht</th>
+                                    <th>Produit</th>
+                                </tr>
+                                {% for e in entree %}
+                                <tr>
+                                    <td>{{e.id}} </td>
+                                    <td>{{e.dateE|date('d/m/y')}} </td>
+                                    <td>{{e.qtE}} </td>
+                                    <td>{{e.produit}} </td>
+                                </tr>
+                                {% endfor %}
+                            
+                             </table>
+                        </div>
+                </div>
+    </section>
+    <section class="col-md-6">
+             <div class="card">  
+                <div class="card-col-m">
+                <div class="card-header">
+                        <h2> Formulaire des Achats
+                    </div>
+                <div class="card-body">
+                        {{form(form)}}
+                </div>
+            </div>
+    </section>
+             
+
+</div>
+<!--<div class="container row">
+   
+            <div class="card-col-md-3">
+        
+               <div class="card-header">
+                    <h2> Liste des Produits </div>
+             <div class="card-body">
+             
+            </div>
+    </div>
+
+    
+            <div class="card-col-md-3">
+               <div class="card-header">
+                    <h2> Formulaire des Produits
+                </div>
+             <div class="card-body">
+             
+            </div>
+      
+    </div>
+
+</div>  -->
+
+{% endblock %}
